@@ -1,16 +1,13 @@
-import React, { Children, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './components/home';
 
-import Step1 from './Components/Step1';
-import Step1Footer from './Components/Step1Footer';
-import './App.css'
-import Step2 from './Components/Step2';
-import Steps from './Components/Steps';
-import Step3 from './Components/Step3';
-import Finishing from './Components/Finishing';
-import Error from './Components/Error';
-import Home from './Components/Home';
-import Backdrop from './Components/backdrop';
+
+import './App.css';
+
+import SearchBar from './components/movie-container';
+import Favourites from './components/favourites';
+import MovieDetails from './components/movie-detail';
+import Error from './components/error';
 
 
 const router = createBrowserRouter([
@@ -21,19 +18,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Step1 />,
+        element: <SearchBar />,
       },
       {
-        path: "step-2",
-        element: <Step2 />
+        path: "/favourites",
+        element: <Favourites />
       },
       {
-        path: "step-3",
-        element: <Step3 />
-      },
-      {
-        path: "finishing",
-        element: <Finishing />
+        path: "/movie-detail/:movieId",
+        element: <MovieDetails />
       },
     ]
   }
@@ -42,8 +35,6 @@ const router = createBrowserRouter([
 function App() {
   return (
       <>
-        {/* <Step2 /> */}
-        {/* <Backdrop /> */}
         <RouterProvider router={router} />
       </>
   )

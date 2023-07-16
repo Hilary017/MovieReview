@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
 *{
     box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 0;
-  background-color: aliceblue;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgba(2, 43, 133, 0.9);
 }
 
 button{
@@ -13,7 +16,7 @@ button{
 }
 
 @media (min-width: 992px){
-  body{
+  /* body{
     padding: 2rem 5rem;
-  }
+  } */
 }

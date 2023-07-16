@@ -1,0 +1,25 @@
+.empty_favourites{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.empty_favourites button{
+    background-color: rgba(2, 43, 133, 0.9);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    transition: all 0.8s ease-in-out;
+}
+
+.empty_favourites button:hover{
+    background-color: rgba(4, 62, 188, 0.9);
+}
+
+.empty_favourites a{
+    text-decoration: none;
+    color: white;
+}

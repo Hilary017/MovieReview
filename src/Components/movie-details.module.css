@@ -1,0 +1,115 @@
+.details__division{
+    background-color: rgba(13, 10, 10, 0.5);
+    width: 90%;
+    padding: 1rem 0;
+    margin-top: -1rem;
+    margin-bottom: 8rem;
+    max-width: 960px;
+}
+
+.details__main{
+    display: flex;
+    flex-direction: column;
+    /* width: 80%; */
+   
+    /* background-color: rgb(248, 5, 248); */
+}
+
+.details_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.details_main h3{
+    color: red;
+    font-weight: bolder;
+}
+
+.details_main img{
+    width: 80%;
+    max-width: 400px;
+    height: 300px;
+}
+
+.detail_description{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    /* max-width: 580px; */
+    /* margin: 0 auto; */
+}
+
+.detail_description span{
+    color: red;
+    font-weight: bold;
+}
+
+.description_actions{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.return_btn{
+    background-color: rgb(129, 127, 127);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    transition: all 0.8s ease-in-out;
+    margin: 0 1rem;
+}
+
+.return_btn:hover{
+    background-color: rgb(110, 109, 109);
+}
+
+.add_btn{
+    background-color: rgba(2, 43, 133, 0.9);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    transition: all 0.8s ease-in-out;
+    height: 40px;
+}
+
+.add_btn:hover{
+    background-color: rgba(4, 62, 188, 0.9);
+}
+
+@media (min-width: 925px) {
+    .details__main{
+        display: flex;
+        flex-direction: row;
+        max-width: 1200px;
+        /* margin: 0 auto; */
+        /* max-width: 1000px; */
+    }
+    .details_main{
+        /* display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 800px;
+        margin: 0 auto; */
+        width: 50%;
+    }
+
+    .detail_description{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        width: 50%;
+    }
+}

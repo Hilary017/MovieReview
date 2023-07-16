@@ -1,11 +1,12 @@
-import { Outlet } from "react-router-dom"
-import Steps from "./Steps";
+import { Outlet } from "react-router-dom";
+import Navbar from "./navbar";
+import Footer from "./footer";
 
-import "./Home.css";
+// import "./Home.css";
 
 const Home = () => {
-    return <div className="container-all">
-        <Steps />
+    return <div>
+        <Navbar />
         <Outlet />
     </div>
 }

@@ -6,6 +6,7 @@
     max-width: 296px;
     height: 446px;
     transition: all 0.8s ease-in-out;
+    position: relative;
 }
 
 .cartitem_img{

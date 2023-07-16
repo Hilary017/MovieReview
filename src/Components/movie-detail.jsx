@@ -21,9 +21,6 @@ const MovieDetails = () => {
         return state.favourites
     })
 
-    console.log(movieFavourite)
-
-    console.log(movieInfo);
 
     const date = new Date(movieInfo.movies.release_date)
     const year = date.getFullYear();
@@ -44,21 +41,17 @@ const MovieDetails = () => {
         const movieExist = movieFavourite.find(collection => collection.id === favouriteMovie.id);
 
         if(!movieExist) {
-            console.log("new movie added");
             favouritesCollection.push(favouriteMovie)
             dispatch(movieActions.addToFavourites(favouritesCollection))
             setShowFavourite("Movies added to favourites");
-            console.log(movieInfo)
-            console.log(movieFavourite);
             setTimeout(() => {
                 setShowFavourite(false)
             }, 2000);
-            return;
-        } else {
-           const newFave = movieFavourite.filter(movie => movie.id !== id);
-           console.log(newFave);
-   
-        }
+            // return;
+        } 
+        // else {
+        //    const newFave = movieFavourite.filter(movie => movie.id !== id);
+        // }
 
         setTimeout(() => {
             setShowFavourite(false)
@@ -70,7 +63,6 @@ const MovieDetails = () => {
         navigate("/");
     }
 
-    console.log(movieInfo)
 
     return <Fragment>
         {showFavourite && <div style={{display: "flex", justifyContent: "center"}}>
@@ -89,7 +81,6 @@ const MovieDetails = () => {
                                     "movie added to favourites" : "movie already a favourite"}</p>
         </div>
         }
-        {movieInfo.movies &&
         <div className={`${classes.details__division} container`}>
             <div className={`${classes.details__main}`}>
                 <div className={classes.details_main}>
@@ -106,8 +97,7 @@ const MovieDetails = () => {
                 <button className={classes.return_btn} onClick={returnHandler}>Back</button>
                 <button className={classes.add_btn} onClick={addToFavouritesHandler.bind(null, movieInfo.movies.id)}>Add to Favourites</button>
             </div>
-        </div>}
-        {!movieFavourite && <h3>You haven't selected any movie.</h3>}
+        </div>
     </Fragment>
 }
 

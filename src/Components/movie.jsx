@@ -1,4 +1,4 @@
-import classes from "./Movie.module.css";
+import classes from "./movie.module.css";
 
 const Movie = (props) => {
     const d = new Date(props.date);

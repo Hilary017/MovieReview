@@ -6,6 +6,20 @@
     padding: 0 2rem;
 }
 
+.movie_main{
+    display: flex;
+    justify-content: center;
+}
+
+.movie_container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+    /* margin-bottom: 5rem; */
+}
+
 .empty_favourites button{
     background-color: rgba(2, 43, 133, 0.9);
     color: white;

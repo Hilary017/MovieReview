@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-const MoviesSection = () => {
-    const [movies, setMovies] = useState([])
+// const MoviesSection = () => {
+//     const [movies, setMovies] = useState([])
 
-    useEffect((movies) => {
-        setMovies(movies)
-    })
-}
+//     useEffect((movies) => {
+//         setMovies(movies)
+//     })
+// }
 
-export default MoviesSection;
+// export default MoviesSection;

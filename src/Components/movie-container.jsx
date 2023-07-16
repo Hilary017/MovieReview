@@ -60,7 +60,6 @@ const MovieContainer = (props) => {
             })
             .then(data => {
                 setIsLoading(false)
-                console.log(data)
                 setMovies(data.results)
             })
             .catch(err => {
@@ -80,11 +79,10 @@ const MovieContainer = (props) => {
 
     // const movieId = router.query.movieId
 
-    const movieInfo = useSelector(state => {
-        return state.value
-    })
+    // const movieInfo = useSelector(state => {
+    //     return state.value
+    // })
 
-    console.log(movieInfo)
 
     const titleChangeHandler = () => {
         setTitle(titleRef.current.value);
@@ -98,7 +96,6 @@ const MovieContainer = (props) => {
         }
         
         setFilteredMovies([])
-        console.log(title);
     }
 
     const movieDetailsHandler = (id, event) => {
@@ -107,15 +104,11 @@ const MovieContainer = (props) => {
         const filteredMovie = movies.filter(movie => {
             return movie.id === id
         })
-        console.log(filteredMovie)
+
         dispatch(movieActions.searchMovies({movies: filteredMovie[0]}))
 
-        console.log(id)
-        console.log(movieId)
-        console.log(params)
-        // console.log(params)
         navigate(`/movie-detail/${id}`)
-        // router.push()
+
     }
 
 
@@ -133,16 +126,12 @@ const MovieContainer = (props) => {
             movieYear = movieYearRef.current.value;
         }
 
-        console.log(movieYear)
-        console.log(movieRating)
 
         if(movies.length > 0) {
             const movieFilter = movies.filter(movie => {
                 const date = new Date(movie.release_date)
                 const year = date.getFullYear();
                 
-                console.log(year)
-                console.log(year == movieYear)
                 
                 let movieRate
     
@@ -155,9 +144,7 @@ const MovieContainer = (props) => {
                 return year == movieYear || movieRate
             })
 
-            console.log(movieFilter);
             setFilteredMovies(movieFilter);
-            // return filteredMovies;
         }
     }
 
@@ -166,11 +153,6 @@ const MovieContainer = (props) => {
 
         setMovieFilter(movieFilterValue);
     }
-
-    // const filterRecords = filteredMovies.slice(firstIndex, lastIndex);
-    // console.log(records);
-    // const npage = Math.ceil(filteredMovies.length / recordPerPage);
-    // const numbers = [...Array(npage + 1).keys()].slice(1);
 
     const prevPage = (e) => {
         e.preventDefault();
@@ -185,7 +167,6 @@ const MovieContainer = (props) => {
     const nextPage = (e) => {
         e.preventDefault();
 
-        console.log(npage)
         if(currentPage !== npage) {
             setCurrentPage(currentPage + 1)
         } else {
@@ -197,9 +178,6 @@ const MovieContainer = (props) => {
         e.preventDefault();
 
         setCurrentPage(id)
-
-
-        console.log(id)
     }   
 
     
@@ -208,7 +186,6 @@ const MovieContainer = (props) => {
     const firstIndex = lastIndex - recordPerPage;
 
     const records = filteredMovies.length > 0 ?  filteredMovies.slice(firstIndex, lastIndex) : movies.slice(firstIndex, lastIndex);
-    console.log(records);
     const npage = Math.ceil(filteredMovies.length > 0 ? filteredMovies.length / recordPerPage : movies.length / recordPerPage);
     const numbers = [...Array(npage + 1).keys()].slice(1);
 
@@ -234,7 +211,7 @@ const MovieContainer = (props) => {
                         <option>by rating</option>
                         <option>by year</option>
                     </select>
-                    {movieFilter === "by rating" && <select ref={movieRatingRef} onChange={e => console.log(e.target.value)}>
+                    {movieFilter === "by rating" && <select ref={movieRatingRef}>
                         <option selected>Select movie ratings</option>
                         <option>ratings (below 5)</option>
                         <option>ratings (5 and above)</option>
